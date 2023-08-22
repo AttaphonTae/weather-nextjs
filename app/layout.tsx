@@ -1,8 +1,9 @@
+import NavBar from '@/components/NavBar'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Noto_Sans_Thai } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Noto_Sans_Thai({ subsets: ['latin'],weight: '400' })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +16,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" >
+      <body className={inter.className} >
+        <div className='text-slate-800'>
+          <NavBar title='navigation_bar' />
+          {children}
+        </div>
+        
+      </body>
     </html>
   )
 }
