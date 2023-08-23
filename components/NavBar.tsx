@@ -16,22 +16,28 @@ export default function  NavBar(data:NavigationBarInterface) {
                         </div>
                         <div className='flex space-x-2 w-1/3 items-center justify-center'>
                             <div onClick={()=>{
-                                setCity('bankok')
+                                
                             }} className='cursor-pointer rounded-full rounded-br border border-slate-200 drop-shadow bg-white
                                             transition hover:bg-slate-800 hover:text-white'>
-                                <p className='font-semibold px-2 py-1 text-sm'>BANKOK</p>
+                                <p className='font-semibold px-2 py-1 text-sm'>เหนือ</p>
                             </div>
                             <div onClick={()=>{
-                                setCity('chiang mai')
+                              
                             }} className='cursor-pointer rounded-full rounded-br border border-slate-200 drop-shadow bg-white
                                            transition hover:bg-slate-800 hover:text-white'>
-                                <p className='font-semibold px-2 py-1 text-sm'>CHIANGMAI</p>
+                                <p className='font-semibold px-2 py-1 text-sm'>กลาง</p>
                             </div>
                             <div onClick={()=>{
-                                setCity('chachoengsao')
+                             
                             }} className='cursor-pointer rounded-full rounded-br border border-slate-200 drop-shadow bg-white
                                             transition hover:bg-slate-800 hover:text-white'>
-                                <p className='font-semibold px-2 py-1 text-sm'>CHACHOENGSAO</p>
+                                <p className='font-semibold px-2 py-1 text-sm'>ออก</p>
+                            </div>
+                            <div onClick={()=>{
+                                
+                            }} className='cursor-pointer rounded-full rounded-br border border-slate-200 drop-shadow bg-white
+                                           transition hover:bg-slate-800 hover:text-white'>
+                                <p className='font-semibold px-2 py-1 text-sm'>ตก</p>
                             </div>
                         </div>
                         <div className='w-1/3'></div>

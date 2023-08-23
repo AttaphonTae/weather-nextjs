@@ -29,28 +29,28 @@ export default function Home() {
     
   }
 
-  const {city} = useCitiesStore()
+  const {city,weatherInfo} = useCitiesStore()
   //callAPI()
   useEffect(()=>{
-    if(city) callAPI(city)
-  },[city])
+    console.log(weatherInfo)
+  },[weatherInfo])
  
   return (
     <main className="flex flex-col flex-wrap items-center justify-center bg-slate-600 text-white">
-      <h1 className='font-medium text-2xl mt-12'>Weather Forecast!</h1>
-
-      <h1 className='font-medium text-xl text-center'>{weather?.location.name}</h1>
-      <div className='w-full px-12'>
-          <CardComponent />
+      <h1 className='font-medium text-2xl my-12'>Weather Forecast!</h1>
+      <div className='w-full flex justify-center space-x-2 px-12 my-6'>
+          
+      <CardComponent city={'bankok'} />
+      <CardComponent city={'chiang mai'} />
+      <CardComponent city={'phuket'} />
 
       </div>
-      {
-        weather && 
-        <div className='w-full mt-12'>
-          {weather && <DayComponent weather={weather} />}
+        <p>{city}</p>
+        <div className='w-full my-12'>
+          {weatherInfo && <DayComponent weather={weatherInfo} />}
         
         </div>
-      }
+      
     </main>
   )
 }

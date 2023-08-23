@@ -17,7 +17,7 @@ export default function  DayComponent(data:dataInterface) {
                             return <div key={item.date}>
                                     <p>{item.date}</p>
                                 {item.hour.map((hour)=>{
-
+                                    console.log(hour.condition.text,hour.condition.code)
                                     return <div key={hour.time_epoch}>
                                         <WeatherComponent weather={hour} />
                                     </div>

@@ -12,8 +12,12 @@ interface dataInterface {
 }
 
 export default function  WeatherComponent(data:dataInterface) {
+
     function convertENGTH(text: string){
+        console.log(text)
         if(text === 'Light rain shower') return 'ฝนตกเบาบาง'
+        if(text === "Heavy rain") return 'ฝนตกหนัก'
+        if(text === 'Moderate rain') return 'ฝนตกปานกลาง'
         if(text === 'Moderate or heavy rain shower') return 'ฝนตกปานกลางหรือหนักมาก'
         if(text === 'Patchy rain possible') return 'อาจมีฝนตกเป็นหย่อมๆ'
         if(text === 'Partly cloudy') return 'มีเมฆบางส่วน'
@@ -26,8 +30,9 @@ export default function  WeatherComponent(data:dataInterface) {
     }
         if(data){
             const date:any = dayjs(data.weather.time)
-            return   <div className='flex flex-wrap items-center justify-start px-2 rounded-full border border-slate-200 w-fit'>
-                           <p className='font-semibold text-sm'> {date.fromNow()} {convertENGTH(data.weather.condition.text)}</p>
+            return   <div className='flex flex-col items-start justify-start px-2  border-b border-slate-200 w-fit m-2'>
+                           <p className='font-semibold text-sm'> {date.fromNow()}</p>
+                           <p  className='font-light text-sm'> {convertENGTH(data.weather.condition.text)}</p>
                     </div>
         }
         else return <></>
