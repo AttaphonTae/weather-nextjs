@@ -30,7 +30,7 @@ export default function  WeatherComponent(data:dataInterface) {
         if(data){
             const date:any = dayjs(data.weather.time)
             return   <div className='flex flex-col items-start justify-start px-2  border-b border-slate-200 w-fit m-2'>
-                           <p className='font-semibold text-sm'> {date.fromNow()}</p>
+                           <p className='font-semibold text-sm'> {date.format('HH')}</p>
                            <p  className='font-light text-sm'> {convertENGTH(data.weather.condition.text)}</p>
                     </div>
         }
