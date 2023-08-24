@@ -34,14 +34,14 @@ export default function  CardComponent(data:DataInterface) {
     }
     useEffect(()=>{
         callAPI()
-    },[])
+    },[data.city])
     if(weather)
     return <div onClick={()=>{
         if(city !== data.city){
             setCity(data.city)
-            callAPI()
+            
         }
-    }} className={city === data.city? 'bg-black w-60 pb-4 bg-white rounded-lg flex flex-col justify-between' : 'cursor-pointer bg-opacity-25 w-60 pb-4 bg-white rounded-lg flex flex-col justify-between'}>
+    }} className={city === data.city? 'bg-black w-60 pb-4 rounded-lg flex flex-col justify-between' : 'cursor-pointer bg-opacity-25 w-60 pb-4 bg-white rounded-lg flex flex-col justify-between'}>
                 <div className='flex justify-between items-center pt-4 px-4'>
                     <div className='p-2'><IoLocationOutline /></div>
                     <div className='p-2 font-medium'>{weather.location.name}</div>
