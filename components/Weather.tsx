@@ -4,8 +4,7 @@ import { ResponseAPI, WeatherInterface,HourlyForecast } from '@/types'
 import dayjs from 'dayjs'
 import Image from 'next/image'
 import React, { useEffect,useState } from 'react'
-import * as relativeTime from 'dayjs/plugin/relativeTime';
-dayjs.extend(relativeTime)
+
 
 interface dataInterface {
     weather:HourlyForecast
